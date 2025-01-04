@@ -20,7 +20,7 @@ def handle_webhook():
         # If the content was modified, post the updated message
         if modified_content != data['content']:
             payload = {"content": modified_content}
-            requests.post(DISCORD_WEBHOOK_URL, json=payload)
+            requests.post('https://discord.com/api/webhooks/1325062136145252352/iBbqZCHhrA6ID45e0qkBtkvM1o-ni1EEM_yz1YiPUPNBaWPPMwXHZIxGMe_64tHZYg57', json=payload)
 
     return '', 204
 
