@@ -6,7 +6,7 @@ import os
 app = Flask(__name__)
 
 # Replace this with your Discord webhook URL
-DISCORD_WEBHOOK_URL = "YOUR_DISCORD_WEBHOOK_URL"
+DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1325062136145252352/iBbqZCHhrA6ID45e0qkBtkvM1o-ni1EEM_yz1YiPUPNBaWPPMwXHZIxGMe_64tHZYg57"
 
 @app.route('/', methods=['POST'])
 def handle_webhook():
@@ -20,7 +20,7 @@ def handle_webhook():
         # If the content was modified, post the updated message
         if modified_content != data['content']:
             payload = {"content": modified_content}
-            requests.post('https://discord.com/api/webhooks/1325062136145252352/iBbqZCHhrA6ID45e0qkBtkvM1o-ni1EEM_yz1YiPUPNBaWPPMwXHZIxGMe_64tHZYg57', json=payload)
+            requests.post(DISCORD_WEBHOOK_URL, json=payload)
 
     return '', 204
 
